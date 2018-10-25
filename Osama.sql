@@ -63,36 +63,36 @@ SELECT f.title, COUNT(a.actor_id) AS 'COUNT'
 FROM film f LEFT JOIN film_actor  a ON f.film_id = a.film_id
 GROUP BY f.title;
 
--- SELECT COUNT(title) 
--- FROM film
--- WHERE title = 'Hunchback Impossible'
+SELECT COUNT(title) 
+FROM film
+ WHERE title = 'Hunchback Impossible'
 
 
--- SELECT c.first_name, c.last_name, SUM(p.amount) AS 'Total Amount  Paid '
--- FROM customer c LEFT JOIN payment p ON c.customer_id = p.customer_id
--- GROUP BY c.first_name, c.last_name
--- ORDER BY c.last_name
+SELECT c.first_name, c.last_name, SUM(p.amount) AS 'Total Amount  Paid '
+FROM customer c LEFT JOIN payment p ON c.customer_id = p.customer_id
+GROUP BY c.first_name, c.last_name
+ORDER BY c.last_name
 
--- SELECT title
--- FROM film
--- WHERE (title LIKE 'K%' OR title LIKE 'Q%') 
--- AND language_id=(SELECT language_id FROM language where name='English')
+SELECT title
+FROM film
+WHERE (title LIKE 'K%' OR title LIKE 'Q%') 
+AND language_id=(SELECT language_id FROM language where name='English')
 
--- SELECT first_name, last_name
--- FROM actor
--- WHERE actor_id
--- IN (SELECT actor_id FROM film_actor WHERE film_id 
--- IN (SELECT film_id from film where title='ALONE TRIP'))
+SELECT first_name, last_name
+FROM actor
+WHERE actor_id
+IN (SELECT actor_id FROM film_actor WHERE film_id 
+IN (SELECT film_id from film where title='ALONE TRIP'))
 
--- SELECT first_name, last_name, email 
--- FROM customer c
--- JOIN address a ON (c.address_id = a.address_id)
--- JOIN city ct ON (a.city_id=ct.city_id)
--- JOIN country cy ON (ct.country_id=cy.country_id)
+SELECT first_name, last_name, email 
+FROM customer c
+JOIN address a ON (c.address_id = a.address_id)
+JOIN city ct ON (a.city_id=ct.city_id)
+JOIN country cy ON (ct.country_id=cy.country_id)
 
--- SELECT title from film f
--- JOIN film_category ft on (f.film_id=ft.film_id)
--- JOIN category c on (ft.category_id=c.category_id);
+SELECT title from film f
+JOIN film_category ft on (f.film_id=ft.film_id)
+JOIN category c on (ft.category_id=c.category_id);
 
 
 SELECT title, COUNT(f.film_id) AS ' Rented-Movies'
